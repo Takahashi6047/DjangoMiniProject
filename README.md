@@ -1,0 +1,2 @@
+# DjangoMiniProject
+Laboratory Activity 
