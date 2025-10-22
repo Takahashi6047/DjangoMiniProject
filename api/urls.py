@@ -1,5 +1,7 @@
 from django.urls import path
 from api.views import student_function_based_view, employee_function_based_view, student_class_based_view, employee_class_based_view
+from api.views import employee_mixins
+from api.views import student_mixins
 
 
 urlpatterns = [
@@ -14,4 +16,10 @@ urlpatterns = [
 
     path('cbv_employees/', employee_class_based_view.EmployeesList.as_view(), name='employees-list'),
     path('cbv_employees_detail/<int:pk>/', employee_class_based_view.EmployeesDetail.as_view(), name='employees-detail'),
+
+    path('mixins_employees/', employee_mixins.Employees.as_view(), name='employees-list'),
+    path('mixins_employees_detail/<int:pk>/', employee_mixins.EmployeeDetails.as_view(), name='employees-detail'),
+
+    path('mixins_students/', student_mixins.Students.as_view(), name='students-list'),
+    path('mixins_students_detail/<int:pk>/', student_mixins.StudentDetails.as_view(), name='students-detail'),
 ]
